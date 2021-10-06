@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+
+	<title>TuciraTeam - Vol.1</title>
+	<HTA:APPLICATION ICON = "file:///C:/Users/Tucira/Desktop/Ferramentas_TuciraTeam_Vol1/Fotos/icon2.ico"/>
+	
+	<script language="vbscript">
+	Sub Submitarea
+	Const ForWriting = 1
+	
+	Dim objFSO, objFile, strFileName
+	strFileName = "DSimples_N1.txt"
+    Set objFSO = CreateObject("Scripting.FileSystemObject")
+	
+	Set objFile = objFSO.OpenTextFile(strFileName, 2, true, -1)
+	Set objShell = CreateObject("WScript.Shell")
+	Set WshShell = CreateObject("Shell.Application")
+	
+		sTxtarea = TextFile.Value
+		objFile.WriteLine sTxtarea & vbCRLF
+		ShellRun = objShell.Run ("file:///C:/Users/Tucira/Desktop/Ferramentas_TuciraTeam_Vol1/V_1/Tunes_decriptar _V1p.bat", 0, 1)
+		objShell.Run "cmd /Q /K del C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Dados\DSimples_N1.txt & exit"
+	End Sub
+	</script>
+	
+	<script language="vbscript">
+Sub Submitarea1
+Const ForWriting = 1
+Dim objFSO, objFile, strFileName
+	strFileName = "Dpassword.txt"
+    Set objFSO = CreateObject("Scripting.FileSystemObject")
+	
+	Set objFile = objFSO.OpenTextFile(strFileName, 2, true, -1)
+	Set objShell = CreateObject("WScript.Shell")
+	
+
+		sTxtarea1 = TextFile1.Value
+		objFile.WriteLine sTxtarea1 & vbCRLF
+		End Sub	
+</script>
+	
+</head>	
+
+	<style>
+		<!-- Style do corpo da página -->
+		body { margin: 0;font-family: Helvetica, Arial, Verdana, Geneva, sans-serif;}
+		.body2 {background-color: black; cursor: pointer; colour: white;}
+		<!-- Style do corpo da acção para chamar programas bat -->
+		#titulo{background-color: #f1f1f1; padding: 10px; color: black; display: block; font-size: 200%;}
+		#titulo3{background-color: #f1f1f1; padding: 10px; color: black; display: block; font-size: 200%;}
+		#subtitulo2{background-color: black; color: white; width:270px; border: 3px solid grey; padding: 3px 40px; text-align: center;font-family: Helvetica, Arial, Verdana, Geneva, sans-serif;cursor: pointer;}
+		<!-- Style da função copyright no fim da página -->
+		#copyright{font-size: 40%;font-family: Helvetica, Arial, Verdana, Geneva, sans-serif;}
+		#gmail{width:35px; height:35px;}
+		<!-- Style do corpo da função dropdow -->
+		ul {list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #818181}
+		.dropbtn {background-color: #f1f1f1;color: black;padding: 2px;font-size: 20px;border: none;cursor: pointer;display: inline-block;text-align: center;position: absolute;}
+		.dropdown {position: relative;display: inline-block;}
+		.dropdown-content {display: none;position: absolute;background-color: #f9f9f9;min-width: 160px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);z-index: 1;}
+		.dropdown-content a {color: black;padding: 12px 16px;text-decoration: none;display: block;cursor: pointer;}
+		.dropdown-content a:hover {background-color: #818181;}
+		.dropdown:hover .dropdown-content {display: block;}
+		<!-- Style do corpo da função sobre -->
+		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+		.sidenav {color: white;height: 100%;width: 0;position: fixed;z-index: 1;top: 0;left: 0;background-color: #111;overflow-x: hidden;padding-top: 60px;text-align:center;}
+		.sidenav a {padding: 8px 8px 8px 32px;text-decoration: none;font-size: 25px;color: #818181;display: block;}
+		.sidenav a:hover{color: white;}
+		.sidenav .closebtn {position: absolute;top: 0;right: 25px;font-size: 40px;margin-left: 50px;}
+		
+	</style>
+	
+
+
+<body>
+
+<div id="menu" class="body"><!-- dar nome ao style do corpo da página -->
+<ul>
+<div class="dropdown"><!-- função dropdow do menu-->
+  <button class="dropbtn"><span style="font-size:50px; color:grey; padding: 5px;">&#8801;</span></button>
+  <div class="dropdown-content">
+  <a onclick="procurar()">&#128193; Procurar</a>
+  <a onclick="bloconotas()">&#128196; Bloco Notas</a>
+  <a onclick="escuroclaro()">&#128260; Escuro/Claro</a>
+  <a onclick="openNav()">&#10068;Sobre</a>
+  <a onclick="self.close()">&#127939; Sair</a>
+  </div>
+</div>
+<!-- função sobre do menu-->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <img src="C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Fotos\Logo-TuciraTeam.jpg"></img>
+  <br></br><br></br>
+  <h3>A Ferramenta TuciraTeam é uma ferramenta de Segurança da Informação com base nos seguinte Métodos:</h3>
+  <br></br>
+  <p>Método de Cifração ou Encriptação - (Ocultação do Significado da Informação)</p>
+  <p>Método de Esteganografia - (Ocultação da Existência da Informação)</p>
+  <p>Método Hash - (Assegurar a Intrigidade da Informação)</p>
+  <br></br>
+   <p>Versão nº1</p>
+   <h5>Copyright © Ferramentas TuciraTeam 2020. Todos os Direitos Reservados.</h5>
+  </div>
+  <!-- script da função sobre do menu-->
+ <script language="javascript">
+function openNav() {document.getElementById("mySidenav").style.width = "100%";}
+function closeNav() {document.getElementById("mySidenav").style.width = "0";}
+</script>
+
+<!--scripts  do interior das opções no menu dropdown-->
+<script language="javascript" >
+function procurar(){var shell = new ActiveXObject( "WScript.shell" );shell.run( '"EXPLORER.EXE"', 1, true );}
+function bloconotas(){var shell = new ActiveXObject( "WScript.shell" );shell.run( '"NOTEPAD.EXE"', 1, true );}
+function escuroclaro(){var x = document.getElementById("menu");if (x.className === "body") {x.className = "body2";} else {x.className = "body";}}
+</script>
+</ul>
+
+<!--INICIO - Ação para chamar os programas em bat-->
+<p><div align="center">
+		<h1 id="titulo">
+			<img src="C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Fotos\foto3.png" style="vertical-align: middle;width:70px;height:60px;"> Ferramentas Segurança &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Fotos\icon2.ico" style="vertical-align: middle;width:50px;height:50px;"> TuciraTeam
+			</h1>
+			<br></br>
+			<h1 style="color: grey;">Desencriptação - Nivel 1</h1>
+		<div align="center"><img src="C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Fotos\secreta.jpg" style="display: block; width:25%;"></div>
+			<br></br>
+	<div align="center"><b>Chave: </b><input type="password" name="TextFile1" id="TextFile1" maxlength="9" style="width:120px; height:22px;" >
+	&nbsp;
+	<button onclick="Submitarea1()" style="background-color: black; color: white; border: 3px solid grey;" >Gravar &nbsp;&#128273;</button>
+	<button name="apagar" style="background-color: black; color: white; border: 3px solid grey;" >Apagar &nbsp;&#128273;</button>
+	<script 
+	name="CMD" for="apagar" event="onClick"  language="VBScript">
+        Set objShell = CreateObject("WScript.Shell")
+		Set WshShell = CreateObject("Shell.Application") 
+        objShell.run "cmd /Q /K del C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Dados\dpassword.txt & exit"
+</script>
+	
+	</div></p>
+	<br></br>
+    <div align="center"><h2>Texto Encriptado</h2>
+	<div align="center"><p>
+	<button id="subtitulo2" onclick="Submitarea"><b style="font-size: 17px;"><ins>Desencriptar Texto</ins></b></button>
+	</p></div>
+	<!-- <button onclick="OpenTxtArea">OPen</button> -->
+	<textarea name="TextFile" id="TextFile" rows="7" cols="76" style="font-size: 17px;"></textarea></div>
+
+	<br></br><br></br>
+	
+	<div align="center"><h2>Texto Desencriptado</h2>
+    <b><p>
+	<a id="subtitulo2" href="file:///C:/Users/Tucira/Desktop/Ferramentas_TuciraTeam_Vol1/Dados/Decriptado_N1.txt" target="janela">Mostrar Texto Desencriptado</a>
+	<a id="subtitulo2" name="limpar" target="janela" href="file:///C:/Users/Tucira/Desktop/Ferramentas_TuciraTeam_Vol1/Dados/Geral/barra.html">Apagar Texto Desencriptado</a>
+<script 
+	name="CMD" for="limpar" event="onClick" target="janela" language="VBScript">
+        Set objShell = CreateObject("WScript.Shell")
+		Set WshShell = CreateObject("Shell.Application") 
+        objShell.run "cmd /Q /K del C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Dados\Decriptado_N1.txt & exit"
+</script>
+	</p></b>
+	<iframe name="janela" style="height:160;width:780px; border:none; font-size: 20px;" src="file:///C:/Users/Tucira/Desktop/Ferramentas_TuciraTeam_Vol1/Dados/Geral/barra.html"></iframe>
+	</div>
+  
+<br></br><br></br>
+</body>
+
+	<div id="titulo3" align="center">
+		<input class="center" id="gmail" type="image" onclick="alert('Email: TuciraTeam@gmail.com')" src="C:\Users\Tucira\Desktop\Ferramentas_TuciraTeam_Vol1\Fotos\gmail-logo.png" >
+		<p id="copyright">Copyright © Ferramentas TuciraTeam 2020. Todos os Direitos Reservados.</p>
+	</div>
+</div>
+</html>
